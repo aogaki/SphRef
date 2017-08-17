@@ -19,6 +19,13 @@ SRPrimaryGeneratorAction::SRPrimaryGeneratorAction()
      fParticleGun(nullptr)
 {
    fParticleGun = new G4ParticleGun(1);
+
+   auto particleTable = G4ParticleTable::GetParticleTable();
+   auto particle = particleTable->FindParticle("gamma");
+   fParticleGun->SetParticleDefinition(particle);
+   fParticleGun->SetParticlePosition(G4ThreeVector(0., 100.*mm, 0.));
+   fParticleGun->SetParticleEnergy(511.*keV);
+   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., -1., 0.));
 }
 
 SRPrimaryGeneratorAction::~SRPrimaryGeneratorAction()

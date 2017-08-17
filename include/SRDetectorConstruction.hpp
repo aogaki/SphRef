@@ -8,6 +8,7 @@
 #include <G4Material.hh>
 #include <G4VisAttributes.hh>
 #include <G4GenericMessenger.hh>
+#include <G4MaterialPropertiesTable.hh>
 
 
 class SRDetectorConstruction : public G4VUserDetectorConstruction
@@ -25,9 +26,15 @@ private:
    // Materials
    void DefineMaterials();
    G4Material *fVacuumMat;
+   G4Material *fAirMat;
+   G4Material *fScintiMat;
    
    std::vector<G4VisAttributes *> fVisAttributes;
 
+   // Set optical properties
+   void MakeMPTable();
+   G4MaterialPropertiesTable *fLYSOTable;
+   G4MaterialPropertiesTable *fAirTable;
 };
 
 #endif

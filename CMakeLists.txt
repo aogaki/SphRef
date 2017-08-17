@@ -5,6 +5,7 @@ project(MyPro)
 
 # I wanna compile with C++11! Aogaki
 add_definitions("-std=c++11 -march=native -mtune=native")    
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default

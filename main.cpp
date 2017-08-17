@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 #else
    auto runManager = new G4RunManager();
 #endif
-
+   
    // Detector construction
    runManager->SetUserInitialization(new SRDetectorConstruction());
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
    //auto physicsList = new SRPhysicsList();
    auto physicsList = new QGSP_BERT_HP();
    runManager->SetUserInitialization(physicsList);
-
+   
    // Primary generator action and User action intialization
    runManager->SetUserInitialization(new SRActionInitialization());
 
